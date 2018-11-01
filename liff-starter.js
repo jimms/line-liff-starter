@@ -30,11 +30,11 @@ function initializeApp(data) {
             type: "POST",
             dataType: "json",
             contentType: "application/json",
-            "data": {
+            data: JSON.stringify({
                 "uid": data.context.userId,
                 "iconUrl": "http:/xxx",
                 "displayName": "Display Name"
-            }
+            })
           }).done(function() {
             //
           });
