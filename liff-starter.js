@@ -33,24 +33,31 @@ function initializeApp(data) {
     document.getElementById('closewindowbutton').addEventListener('click', function () {
         liff.closeWindow();
     });
-    document.getElementById('joinroom').addEventListener('click', function () {
+    var roomId = data.context.utouId || data.context.roomId || data.context.groupId;
+    $.ajax({
+        url: "https://lfk-here.herokuapp.com/room/" + roomId,
+        type: "POST",
+        traditional: true,
+        contentType: 'application/json; charset=utf-8',
+        data: JSON.stringify({
+            "uid": data.context.userId,
+            "iconUrl": "http:/xxx",
+            "displayName": "Display Name"
+        })
+    }).done(function() {
+        //
+    });
+    setInterval(function(){
         var roomId = data.context.utouId || data.context.roomId || data.context.groupId;
         $.ajax({
             url: "https://lfk-here.herokuapp.com/room/" + roomId,
-            type: "POST",
-            traditional: true,
-            contentType: 'application/json; charset=utf-8',
-            data: JSON.stringify({
-                "uid": data.context.userId,
-                "iconUrl": "http:/xxx",
-                "displayName": "Display Name"
-            })
-          }).done(function() {
-            //
-          });
-    });
+            type: "GET"
+        }).done(function(data) {
+            document.getElementById('room').textContent = JSON.stringify(new Date()) + JSON.stringify(data);
+        });
+    }, 1000);
     document.getElementById('getroom').addEventListener('click', function () {
-        liff.closeWindow();
+        
     });
 
     // sendMessages call
