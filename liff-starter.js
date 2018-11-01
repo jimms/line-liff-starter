@@ -2,6 +2,16 @@ window.onload = function (e) {
     liff.init(function (data) {
         initializeApp(data);
     });
+    // initializeApp({
+    //     language: "lan",
+    //     context: {
+    //         viewType: 'xx',
+    //         userId: 'userId',
+    //         utouId: 'utouid',
+    //         roomId: 'roomId',
+    //         groupId: 'groupId'
+    //     }
+    // });
 };
 
 function initializeApp(data) {
