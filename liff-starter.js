@@ -24,11 +24,11 @@ function initializeApp(data) {
         liff.closeWindow();
     });
     document.getElementById('joinroom').addEventListener('click', function () {
-        var roomId = data.context.userId || data.context.roomId || data.context.groupId;
+        var roomId = data.context.utouId || data.context.roomId || data.context.groupId;
         debugger
         $.ajax({
-            method: "POST",
             url: "https://lfk-here.herokuapp.com/room/" + roomId,
+            type: "POST",
             dataType: "json",
             contentType: "application/json",
             data: {
