@@ -29,7 +29,7 @@ function initializeApp(data) {
             url: "https://lfk-here.herokuapp.com/room/" + roomId,
             type: "POST",
             dataType: "json",
-            contentType: "application/json",
+            contentType: 'application/json; charset=utf-8',
             data: JSON.stringify({
                 "uid": data.context.userId,
                 "iconUrl": "http:/xxx",
