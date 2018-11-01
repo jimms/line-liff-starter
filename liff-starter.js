@@ -27,9 +27,12 @@ function initializeApp(data) {
         var roomId = data.context.userId || data.context.roomId || data.context.groupId;
         debugger
         $.ajax({
+            method: "POST",
             url: "https://lfk-here.herokuapp.com/room/" + roomId,
             context: {
-                "123": "123"
+                "uid": data.context.userId
+                "iconUrl": "http:/xxx",
+                "displayName": "Display Name"
             }
           }).done(function() {
             //
