@@ -29,7 +29,9 @@ function initializeApp(data) {
         $.ajax({
             method: "POST",
             url: "https://lfk-here.herokuapp.com/room/" + roomId,
-            context: {
+            dataType: "json",
+            contentType: "application/json",
+            data: {
                 "uid": data.context.userId,
                 "iconUrl": "http:/xxx",
                 "displayName": "Display Name"
