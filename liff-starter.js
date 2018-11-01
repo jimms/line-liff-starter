@@ -30,7 +30,7 @@ function initializeApp(data) {
             method: "POST",
             url: "https://lfk-here.herokuapp.com/room/" + roomId,
             context: {
-                "uid": data.context.userId
+                "uid": data.context.userId,
                 "iconUrl": "http:/xxx",
                 "displayName": "Display Name"
             }
