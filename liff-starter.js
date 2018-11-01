@@ -23,6 +23,21 @@ function initializeApp(data) {
     document.getElementById('closewindowbutton').addEventListener('click', function () {
         liff.closeWindow();
     });
+    document.getElementById('joinroom').addEventListener('click', function () {
+        var roomId = data.context.userId || data.context.roomId || data.context.groupId;
+        debugger
+        $.ajax({
+            url: "https://lfk-here.herokuapp.com/room/" + roomId,
+            context: {
+                "123": "123"
+            }
+          }).done(function() {
+            //
+          });
+    });
+    document.getElementById('getroom').addEventListener('click', function () {
+        liff.closeWindow();
+    });
 
     // sendMessages call
     document.getElementById('sendmessagebutton').addEventListener('click', function () {
