@@ -25,13 +25,12 @@ function initializeApp(data) {
     });
     document.getElementById('joinroom').addEventListener('click', function () {
         var roomId = data.context.utouId || data.context.roomId || data.context.groupId;
-        debugger
         $.ajax({
             url: "https://lfk-here.herokuapp.com/room/" + roomId,
             type: "POST",
             dataType: "json",
             contentType: "application/json",
-            data: {
+            "data": {
                 "uid": data.context.userId,
                 "iconUrl": "http:/xxx",
                 "displayName": "Display Name"
